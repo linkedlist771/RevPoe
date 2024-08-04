@@ -47,13 +47,13 @@ async def generate_responses(api_key: str, formatted_messages: list, bot_name: s
         response_template["choices"][0]["delta"]["content"] = partial.text
 
         # Create the SSE formatted string, and then yield
-        yield f"data: {json.dumps(response_template)}\n\n"
-
+        # yield f"data: {json.dumps(response_template)}\n\n"
+        yield  partial.text
     # Send termination sequence
     response_template["choices"][0]["delta"] = {}  # Empty 'delta' field
     response_template["choices"][0]["finish_reason"] = "stop"  # Set 'finish_reason' to 'stop'
 
-    yield f"data: {json.dumps(response_template)}\n\ndata: [DONE]\n\n"
+    # yield f"data: {json.dumps(response_template)}\n\ndata: [DONE]\n\n"
 
 
 @app.post("/v1/chat/completions")
