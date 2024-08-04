@@ -1,0 +1,20 @@
+[project]
+name = "RevPoe"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "LiDing", email = "72634327+linkedlist771@users.noreply.github.com"},
+]
+dependencies = [
+    "fastapi>=0.112.0",
+    "uvicorn>=0.30.5",
+    "fastapi-poe>=0.0.47",
+    "openai>=1.38.0",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
